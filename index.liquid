@@ -1,0 +1,117 @@
+ <!-- Accordion -->
+<div class="accordion__container">        
+  <div class="accordion__item">
+      <div class="accordion__head">
+        <p>Shipping policy</p>  
+        
+         <span class="accordion__arrow">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9.18994L12 15.1899L18 9.18994" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+        </span>
+      </div>
+      <div class="accordion__content">
+         <p>Ships in 5-9 days</p>
+      </div>
+    </div>
+
+    <div class="accordion__item">
+      <div class="accordion__head">
+         <p>Care details</p>
+          <span class="accordion__arrow">
+          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 9.18994L12 15.1899L18 9.18994" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+         </span>
+      </div>
+      <div class="accordion__content">
+         <p> Machine wash cold</p>
+      </div>
+  </div>
+
+</div>
+
+<style>
+.accordion__container {
+    width: 100%;
+    margin-bottom: 27px;
+  }
+  
+  .accordion__item {
+    border-bottom: 1px solid #000;
+    background-color: #fff;
+    padding: 16px 0;
+  }
+
+  .accordion__head {
+    position: relative;
+    cursor: pointer;
+   }
+  
+
+  .accordion__head p {
+    color: #000;
+    font-size: 16px;
+    font-family: 'Noto Serif', serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25.2px;
+    margin: 0;
+  }
+  
+  .accordion__content {
+    padding: 15px 0 0;
+    display: none;
+  }
+       
+  
+  .accordion__content  p {
+    color: #565A5C;
+    font-size: 13px;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
+    margin: 0;
+  }
+  
+  span.accordion__arrow{
+    position: absolute;
+    right: 0;
+    top: 30%;
+  }
+   span.accordion__arrow svg{
+    transition:  0.2s ease-in;
+   }
+  .accordion__head.active  svg {
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    transition: 0.2s ease-in;
+  }
+  
+
+</style>
+
+<script>
+     $('.accordion__container .accordion__item:nth-child(1) .accordion__head').addClass('active');
+        $('.accordion__container .accordion__item:nth-child(1) .accordion__content').slideDown();
+        $('.accordion__head').on('click', function() {
+            if($(this).hasClass('active')) {
+            $(this).siblings('.accordion__content').slideUp();
+            $(this).removeClass('active');
+            }
+            else {
+            $('.accordion__content').slideUp();
+            $('.accordion__head').removeClass('active');
+            $(this).siblings('.accordion__content').slideToggle();
+            $(this).toggleClass('active');
+            }
+        }); 
+
+</script>
+
+
+
+
